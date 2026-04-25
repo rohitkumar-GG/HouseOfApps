@@ -11,23 +11,46 @@ public class SubscriptionPage {
     private final AppiumDriver driver;
     private final WebDriverWait wait;
 
-    private final By headerText = AppiumBy.xpath("//android.widget.TextView[contains(@text, 'Identify rocks')]");
-    private final By closeXButton = AppiumBy.accessibilityId("Close");
+    // Based on "Subscription ui 1.xml"
+    private final By weeklyTier = AppiumBy.xpath("//*[@text='Weekly']");
+    private final By monthlyTier = AppiumBy.xpath("//*[@text='Monthly']");
+    private final By annualTier = AppiumBy.xpath("//*[@text='Annual']");
+    private final By continueButton = AppiumBy.xpath("//*[@text='Continue']");
+    private final By restoreButton = AppiumBy.xpath("//*[@text='Restore purchases']");
+
+    // Close button for Subscription UI
+    // FIX: Using structural XPath because the dev left this button completely unlabeled
+    private final By closeButton = AppiumBy.xpath("//android.widget.ScrollView/android.view.View[1]");
+
+    // Google Play UI Close Button (Based on "Google Play payment UI.xml")
+    private final By googlePlayCloseBtn = AppiumBy.accessibilityId("Close");
 
     public SubscriptionPage(AppiumDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
-    public boolean isSubscriptionPageLoaded() {
-        try {
-            return wait.until(ExpectedConditions.visibilityOfElementLocated(headerText)).isDisplayed();
-        } catch (Exception e) {
-            return false;
-        }
+    public void selectAllTiers() throws InterruptedException {
+        wait.until(ExpectedConditions.elementToBeClickable(weeklyTier)).click();
+        Thread.sleep(500); // Brief pause to simulate human reading
+        driver.findElement(monthlyTier).click();
+        Thread.sleep(500);
+        driver.findElement(annualTier).click();
     }
 
-    public void clickCloseX() {
-        wait.until(ExpectedConditions.elementToBeClickable(closeXButton)).click();
+    public void clickContinue() {
+        driver.findElement(continueButton).click();
+    }
+
+    public void closeGooglePlayOverlay() {
+        wait.until(ExpectedConditions.elementToBeClickable(googlePlayCloseBtn)).click();
+    }
+
+    public void clickRestorePurchases() {
+        driver.findElement(restoreButton).click();
+    }
+
+    public void closeSubscriptionUI() {
+        wait.until(ExpectedConditions.elementToBeClickable(closeButton)).click();
     }
 }

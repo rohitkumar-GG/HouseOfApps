@@ -5,9 +5,9 @@
     <classes>
       <class name="com.project.tests.OnboardingTest">
         <methods>
-          <include name="verifyOnboardingAndBugs"/>
           <include name="tearDown"/>
           <include name="setupDriver"/>
+          <include name="masterOnboardingFlowTest"/>
         </methods>
       </class> <!-- com.project.tests.OnboardingTest -->
     </classes>

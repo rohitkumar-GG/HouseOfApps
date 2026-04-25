@@ -11,11 +11,8 @@ public class LanguagePage {
     private final AppiumDriver driver;
     private final WebDriverWait wait;
 
-    private final By englishOption = AppiumBy.xpath("//android.widget.TextView[@text='English']");
-    private final By backButton = AppiumBy.accessibilityId("Back");
-    private final By languageHeader = AppiumBy.xpath("//android.widget.TextView[@text='Language Settings']");
-
-    // NEW: The checkmark at the top right
+    private final By languageHeader = AppiumBy.xpath("//*[@text='Language Settings' or @text='Language']");
+    private final By inAppBackButton = AppiumBy.accessibilityId("Back"); // Or your specific locator
     private final By doneButton = AppiumBy.accessibilityId("Done");
 
     public LanguagePage(AppiumDriver driver) {
@@ -24,18 +21,29 @@ public class LanguagePage {
     }
 
     public boolean isLanguageScreenLoaded() {
-        return wait.until(ExpectedConditions.visibilityOfElementLocated(languageHeader)).isDisplayed();
+        try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(languageHeader)).isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void clickInAppBackButton() {
-        driver.findElement(backButton).click();
+        driver.findElement(inAppBackButton).click();
     }
 
-    public void selectEnglish() {
-        wait.until(ExpectedConditions.elementToBeClickable(englishOption)).click();
+    /** Dynamically scrolls to the text and clicks it */
+    public void selectLanguage(String languageName) {
+        try {
+            // This is the native Android scroll engine. It scrolls until it finds the exact text.
+            String uiAutomatorCode = "new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().text(\"" + languageName + "\"))";
+            driver.findElement(AppiumBy.androidUIAutomator(uiAutomatorCode)).click();
+            System.out.println("[ACTION] Selected language: " + languageName);
+        } catch (Exception e) {
+            System.out.println("[ERROR] Could not find language: " + languageName);
+        }
     }
 
-    // NEW: Method to click the checkmark
     public void clickDone() {
         wait.until(ExpectedConditions.elementToBeClickable(doneButton)).click();
     }

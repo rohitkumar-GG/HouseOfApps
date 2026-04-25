@@ -1,68 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-24T17:55:00 IST" name="Command line suite" finished-at="2026-04-24T17:56:25 IST" duration-ms="84829">
+  <suite started-at="2026-04-25T23:36:26 IST" name="Command line suite" finished-at="2026-04-25T23:37:41 IST" duration-ms="74335">
     <groups>
     </groups>
-    <test started-at="2026-04-24T17:55:00 IST" name="Command line test" finished-at="2026-04-24T17:56:25 IST" duration-ms="84829">
+    <test started-at="2026-04-25T23:36:26 IST" name="Command line test" finished-at="2026-04-25T23:37:41 IST" duration-ms="74335">
       <class name="com.project.tests.OnboardingTest">
-        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.OnboardingTest@35d1872a]" started-at="2026-04-24T17:55:00 IST" name="setupDriver" finished-at="2026-04-24T17:55:06 IST" duration-ms="5840" status="PASS">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.OnboardingTest@417b2f9f]" started-at="2026-04-25T23:36:26 IST" name="setupDriver" finished-at="2026-04-25T23:36:31 IST" duration-ms="4562" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method signature="verifyOnboardingAndBugs()[pri:0, instance:com.project.tests.OnboardingTest@35d1872a]" started-at="2026-04-24T17:55:06 IST" name="verifyOnboardingAndBugs" finished-at="2026-04-24T17:56:25 IST" duration-ms="78408" status="FAIL">
-          <exception class="java.lang.AssertionError">
-            <message>
-              <![CDATA[The following asserts failed:
-CRITICAL BUG 2: Hardware back button closed the app entirely! expected [rock.identifier.diamond.gem.stone.mineral.finder.scanner] but found [com.mi.android.globallauncher],
-Subscription UI did not load after reopening app. expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-CRITICAL BUG 2: Hardware back button closed the app entirely! expected [rock.identifier.diamond.gem.stone.mineral.finder.scanner] but found [com.mi.android.globallauncher],
-Subscription UI did not load after reopening app. expected [true] but found [false]
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:46)
-at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:30)
-at com.project.tests.OnboardingTest.verifyOnboardingAndBugs(OnboardingTest.java:63)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
-at org.testng.TestRunner.privateRun(TestRunner.java:739)
-at org.testng.TestRunner.run(TestRunner.java:614)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at com.project.cli.MenuRunner.main(MenuRunner.java:33)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:565)
-at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
-at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
-at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
-at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
-at java.base/java.lang.Thread.run(Thread.java:1516)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+        <test-method signature="masterOnboardingFlowTest()[pri:0, instance:com.project.tests.OnboardingTest@417b2f9f]" started-at="2026-04-25T23:36:31 IST" name="masterOnboardingFlowTest" finished-at="2026-04-25T23:37:40 IST" duration-ms="68913" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyOnboardingAndBugs -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.OnboardingTest@35d1872a]" started-at="2026-04-24T17:56:25 IST" name="tearDown" finished-at="2026-04-24T17:56:25 IST" duration-ms="572" status="PASS">
+        </test-method> <!-- masterOnboardingFlowTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.OnboardingTest@417b2f9f]" started-at="2026-04-25T23:37:40 IST" name="tearDown" finished-at="2026-04-25T23:37:41 IST" duration-ms="849" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
