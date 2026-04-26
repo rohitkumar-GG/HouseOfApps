@@ -82,7 +82,7 @@ public class BaseTest {
         totalBugCount++;
         System.out.println("❌ BUG FOUND: " + bugMessage);
         try {
-            File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            File scrFile = driver.getScreenshotAs(OutputType.FILE);
             String fileName = screenshotName + "_" + System.currentTimeMillis() + ".png";
             String filePath = System.getProperty("user.dir") + "/target/bug_screenshots/" + fileName;
             FileUtils.copyFile(scrFile, new File(filePath));
@@ -117,6 +117,7 @@ public class BaseTest {
         }
     }
 
+    @SuppressWarnings("BusyWait")
     public void closeInterstitialAds() {
         logStep("[ACTION] AdBuster Engaged: Hunting for 'Skip' or 'Close' buttons...");
         long endTime = System.currentTimeMillis() + 60000;
@@ -130,14 +131,14 @@ public class BaseTest {
 
                 var adCounters = driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Ad ')] | //*[contains(@text, 'Reward')]"));
                 if (!adCounters.isEmpty()) {
-                    System.out.println("   -> Ad Status: " + adCounters.get(0).getText());
+                    System.out.println("   -> Ad Status: " + adCounters.getFirst().getText());
                 }
 
                 String closeXPath = "//*[@content-desc='Close' or @content-desc='close' or @text='Skip' or @text='Close' or @text='X' or contains(@resource-id, 'close') or contains(@resource-id, 'dismiss')] | //*[contains(@text, 'Reward')]/..//android.widget.Image | //*[contains(@text, 'Reward')]/following-sibling::*";
                 var closeBtns = driver.findElements(AppiumBy.xpath(closeXPath));
 
                 if (!closeBtns.isEmpty()) {
-                    closeBtns.get(0).click();
+                    closeBtns.getFirst().click();
                     logStep("[ACTION] Tapped an Ad Close/Skip button.");
                     Thread.sleep(2000);
                 } else {
@@ -147,7 +148,7 @@ public class BaseTest {
         }
         logStep("[WARNING] AdBuster timed out after 60 seconds.");
     }
-
+    @SuppressWarnings("unused")
     public void clearAppData() {
         try {
             logStep("[SYSTEM] Terminating app and clearing all app data...");

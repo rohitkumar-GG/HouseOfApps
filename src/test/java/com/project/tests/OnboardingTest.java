@@ -20,7 +20,6 @@ public class OnboardingTest extends BaseTest {
     @Test
     public void masterOnboardingFlowTest() throws Exception {
         SoftAssert softAssert = new SoftAssert();
-        SplashPage splashPage = new SplashPage(driver);
         LanguagePage langPage = new LanguagePage(driver);
         FTUEPage ftuePage = new FTUEPage(driver);
         SubscriptionPage subPage = new SubscriptionPage(driver);
