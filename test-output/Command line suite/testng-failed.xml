@@ -6,6 +6,8 @@
       <class name="com.project.tests.OnboardingTest">
         <methods>
           <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="tearDownReport"/>
           <include name="setupDriver"/>
           <include name="masterOnboardingFlowTest"/>
         </methods>

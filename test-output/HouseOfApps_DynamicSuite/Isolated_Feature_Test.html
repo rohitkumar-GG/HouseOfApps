@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>TestNG:  Command line test</title>
+<title>TestNG:  Isolated_Feature_Test</title>
 <link href="../testng.css" rel="stylesheet" type="text/css" />
 <link href="../my-testng.css" rel="stylesheet" type="text/css" />
 
@@ -53,13 +53,13 @@ function toggleAllBoxes() {
 
 </head>
 <body>
-<h2 align='center'>Command line test</h2><table border='1' align="center">
+<h2 align='center'>Isolated_Feature_Test</h2><table border='1' align="center">
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Apr 27 14:40:55 IST 2026</td>
+<td>Started on:</td><td>Mon Apr 27 15:03:55 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>359 seconds (359262 ms)</td>
+<tr><td>Total time:</td><td>166 seconds (166819 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,33 +76,58 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.project.tests.OnboardingTest.masterOnboardingFlowTest()'><b>masterOnboardingFlowTest</b><br>Test class: com.project.tests.OnboardingTest</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc=&apos;Save Rock&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+<td title='com.project.tests.NavigationTest.isolatedNavigationTest()'><b>isolatedNavigationTest</b><br>Test class: com.project.tests.NavigationTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;26.0.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
+Command: [b471cf7f-db8e-4fe1-8e21-2e656f66fb63, findElement {using=xpath, value=//*[@content-desc=&apos;Back&apos;] | //*[@content-desc=&apos;Navigate up&apos;]}]
 Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 4002d35e-824b-4435-90b0-6613c6a59597
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:241)
+Session ID: b471cf7f-db8e-4fe1-8e21-2e656f66fb63
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at com.project.tests.NavigationTest.isolatedNavigationTest(NavigationTest.java:60)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:33)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:134)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:112)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:48)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
 	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
 	at java.base/java.lang.Thread.run(Thread.java:1516)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace675693275", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace675693275'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@content-desc=&apos;Save Rock&apos;] (tried for 15 second(s) with 500 milliseconds interval)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1124186257", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1124186257'><pre>org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
 System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;26.0.1&apos;
 Driver info: io.appium.java_client.android.AndroidDriver
+Command: [b471cf7f-db8e-4fe1-8e21-2e656f66fb63, findElement {using=xpath, value=//*[@content-desc=&apos;Back&apos;] | //*[@content-desc=&apos;Navigate up&apos;]}]
 Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 4002d35e-824b-4435-90b0-6613c6a59597
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:241)
+Session ID: b471cf7f-db8e-4fe1-8e21-2e656f66fb63
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at com.project.tests.NavigationTest.isolatedNavigationTest(NavigationTest.java:60)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -126,7 +151,9 @@ Session ID: 4002d35e-824b-4435-90b0-6613c6a59597
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
 	at org.testng.TestNG.runSuites(TestNG.java:1112)
 	at org.testng.TestNG.run(TestNG.java:1079)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:33)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:134)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:112)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:48)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
@@ -135,8 +162,8 @@ Session ID: 4002d35e-824b-4435-90b0-6613c6a59597
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
 	at java.base/java.lang.Thread.run(Thread.java:1516)
 </pre></div></td>
-<td>354</td>
-<td>com.project.tests.OnboardingTest@68eaeab6</td></tr>
+<td>161</td>
+<td>com.project.tests.NavigationTest@3d20cc17</td></tr>
 </table><p>
 </body>
 </html>

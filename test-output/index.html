@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,8 +38,8 @@
       <div class="suite">
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
-            <a href="#" panel-name="suite-Command_line_suite" class="navigator-link">
-              <span class="suite-name border-passed">Command line suite</span>
+            <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" class="navigator-link">
+              <span class="suite-name border-failed">HouseOfApps_DynamicSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,37 +49,37 @@
             <div class="suite-section-content">
               <ul>
                 <li>
-                  <a href="#" panel-name="test-xml-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="test-xml-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>[unset file name]</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="testlist-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="testlist-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="group-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="group-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>0 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="times-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="times-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>Times</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="reporter-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="reporter-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>Reporter output</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="ignored-methods-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="ignored-methods-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>Ignored methods</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
-                  <a href="#" panel-name="chronological-Command_line_suite" class="navigator-link ">
+                  <a href="#" panel-name="chronological-HouseOfApps_DynamicSuite" class="navigator-link ">
                     <span>Chronological view</span>
                   </a> <!-- navigator-link  -->
                 </li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method, 1 failed,   </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods passed suite-Command_line_suite"> (hide)</a> <!-- hide-methods passed suite-Command_line_suite -->
-                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" class="hide-methods failed suite-HouseOfApps_DynamicSuite"> (hide)</a> <!-- hide-methods failed suite-HouseOfApps_DynamicSuite -->
+                      <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" class="show-methods failed suite-HouseOfApps_DynamicSuite"> (show)</a> <!-- show-methods failed suite-HouseOfApps_DynamicSuite -->
                     </span>
-                    <div class="method-list-content passed suite-Command_line_suite">
+                    <div class="method-list-content failed suite-HouseOfApps_DynamicSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Command_line_suite" title="com.project.tests.OnboardingTest" class="method navigator-link" hash-for-method="masterOnboardingFlowTest">masterOnboardingFlowTest</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" title="com.project.tests.NavigationTest" class="method navigator-link" hash-for-method="isolatedNavigationTest">isolatedNavigationTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Command_line_suite -->
+                    </div> <!-- method-list-content failed suite-HouseOfApps_DynamicSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,68 +117,98 @@
     </div> <!-- navigator-root -->
     <div class="wrapper">
       <div class="main-panel-root">
-        <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
-          <div class="suite-Command_line_suite-class-passed">
+        <div panel-name="suite-HouseOfApps_DynamicSuite" class="panel HouseOfApps_DynamicSuite">
+          <div class="suite-HouseOfApps_DynamicSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.project.tests.OnboardingTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.project.tests.NavigationTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="masterOnboardingFlowTest">
-                  </a> <!-- masterOnboardingFlowTest -->
-                  <span class="method-name">masterOnboardingFlowTest</span>
+                  <a name="isolatedNavigationTest">
+                  </a> <!-- isolatedNavigationTest -->
+                  <span class="method-name">isolatedNavigationTest</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;26.0.1&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [b471cf7f-db8e-4fe1-8e21-2e656f66fb63, findElement {using=xpath, value=//*[@content-desc=&apos;Back&apos;] | //*[@content-desc=&apos;Navigate up&apos;]}]
+Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: b471cf7f-db8e-4fe1-8e21-2e656f66fb63
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:353)
+	at com.project.tests.NavigationTest.isolatedNavigationTest(NavigationTest.java:60)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:134)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:112)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:48)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
+	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
+	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
+	at java.base/java.lang.Thread.run(Thread.java:1516)
+... Removed 27 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Command_line_suite-class-passed -->
-        </div> <!-- panel Command_line_suite -->
-        <div panel-name="test-xml-Command_line_suite" class="panel">
+          </div> <!-- suite-HouseOfApps_DynamicSuite-class-failed -->
+        </div> <!-- panel HouseOfApps_DynamicSuite -->
+        <div panel-name="test-xml-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Command line suite&quot;&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Command line test&quot;&gt;
+&lt;suite name=&quot;HouseOfApps_DynamicSuite&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Isolated_Feature_Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.project.tests.OnboardingTest&quot;/&gt;
+      &lt;class name=&quot;com.project.tests.NavigationTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- Command line test --&gt;
-&lt;/suite&gt; &lt;!-- Command line suite --&gt;
+  &lt;/test&gt; &lt;!-- Isolated_Feature_Test --&gt;
+&lt;/suite&gt; &lt;!-- HouseOfApps_DynamicSuite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="testlist-Command_line_suite" class="panel">
+        <div panel-name="testlist-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Tests for Command line suite</span>
+            <span class="header-content">Tests for HouseOfApps_DynamicSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Command line test (1 class)</span>
+                <span class="test-name">Isolated_Feature_Test (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="group-Command_line_suite" class="panel">
+        <div panel-name="group-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Groups for Command line suite</span>
+            <span class="header-content">Groups for HouseOfApps_DynamicSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="times-Command_line_suite" class="panel">
+        <div panel-name="times-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Times for Command line suite</span>
+            <span class="header-content">Times for HouseOfApps_DynamicSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="times-div">
               <script type="text/javascript">
-suiteTableInitFunctions.push('tableData_Command_line_suite');
-function tableData_Command_line_suite() {
+suiteTableInitFunctions.push('tableData_HouseOfApps_DynamicSuite');
+function tableData_HouseOfApps_DynamicSuite() {
 var data = new google.visualization.DataTable();
 data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
@@ -186,52 +216,62 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'masterOnboardingFlowTest')
-data.setCell(0, 2, 'com.project.tests.OnboardingTest')
-data.setCell(0, 3, 461846);
-window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
+data.setCell(0, 1, 'isolatedNavigationTest')
+data.setCell(0, 2, 'com.project.tests.NavigationTest')
+data.setCell(0, 3, 161806);
+window.suiteTableData['HouseOfApps_DynamicSuite']= { tableData: data, tableDiv: 'times-div-HouseOfApps_DynamicSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 7 minutes</span>
-              <div id="times-div-Command_line_suite">
-              </div> <!-- times-div-Command_line_suite -->
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-HouseOfApps_DynamicSuite">
+              </div> <!-- times-div-HouseOfApps_DynamicSuite -->
             </div> <!-- times-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="reporter-Command_line_suite" class="panel">
+        <div panel-name="reporter-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">Reporter output for Command line suite</span>
+            <span class="header-content">Reporter output for HouseOfApps_DynamicSuite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="ignored-methods-Command_line_suite" class="panel">
+        <div panel-name="ignored-methods-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
-        <div panel-name="chronological-Command_line_suite" class="panel">
+        <div panel-name="chronological-HouseOfApps_DynamicSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
             <span class="header-content">Methods in chronological order</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.project.tests.OnboardingTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.project.tests.NavigationTest</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setupReport</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setupDriver</span>
-                <span class="method-start">0 ms</span>
+                <span class="method-start">41 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">masterOnboardingFlowTest</span>
-                <span class="method-start">4466 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">isolatedNavigationTest</span>
+                <span class="method-start">4422 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">466314 ms</span>
+                <span class="method-start">166229 ms</span>
               </div> <!-- configuration-method after -->
+              <div class="configuration-suite after">
+                <span class="method-name">tearDownReport</span>
+                <span class="method-start">166881 ms</span>
+              </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
