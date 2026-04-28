@@ -22,7 +22,7 @@ import java.time.Duration;
 
 public class BaseTest {
     protected AndroidDriver driver;
-    protected final String appPackage = "rock.identifier.diamond.gem.stone.mineral.finder.scanner";
+    protected String appPackage;
 
     protected static ExtentReports extent;
     protected static ExtentTest testLog;
@@ -43,14 +43,21 @@ public class BaseTest {
     @BeforeMethod
     public void setupDriver() throws Exception {
         totalBugCount = 0;
-        testLog = extent.createTest("Master Onboarding & FTUE Flow");
+        testLog = extent.createTest("Automation Execution Flow");
 
         String appTarget = System.getProperty("targetApp", "Stone");
+
+        // DYNAMIC PACKAGE ASSIGNMENT
+        if (appTarget.equalsIgnoreCase("Coin")) {
+            appPackage = "app.coinidentifier.checker.scanner";
+        } else {
+            appPackage = "rock.identifier.diamond.gem.stone.mineral.finder.scanner";
+        }
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.setPlatformName("Android");
         options.setAutomationName("UiAutomator2");
-        options.setDeviceName("83fc08ef");
+        options.setDeviceName("83fc08ef"); // Update if your device ID changes
         options.setNoReset(true);
         options.setCapability("appium:autoLaunch", false);
         options.setCapability("appium:ignoreHiddenApiPolicyError", true);
@@ -58,10 +65,11 @@ public class BaseTest {
         options.setCapability("appium:disableWindowAnimation", true);
         options.setCapability("appium:waitForIdleTimeout", 100);
 
-        if (appTarget.equalsIgnoreCase("Stone")) {
-            options.setAppPackage(appPackage);
-            options.setAppActivity(appPackage + ".MainActivity");
-        }
+        // 🔥 THE FIX: Prevent Appium from killing the session during manual interventions!
+        options.setCapability("appium:newCommandTimeout", 3600);
+
+        options.setAppPackage(appPackage);
+        options.setAppActivity(appPackage + ".MainActivity");
 
         driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -169,18 +177,19 @@ public class BaseTest {
 
     @SuppressWarnings("BusyWait")
     public void closeInterstitialAds() {
-        logStep("[ACTION] AdBuster Engaged: Hunting for 'Skip' or 'Close' buttons...");
-        long endTime = System.currentTimeMillis() + 60000;
+        logStep("[ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...");
+        long endTime = System.currentTimeMillis() + 120000;
 
-        try { Thread.sleep(2000); } catch (Exception ignored) {}
+        // 🔥 THE SPEED FIX: Drop the wait time to 500ms so Appium doesn't freeze looking for missing ads!
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 
-        while (System.currentTimeMillis() < endTime) {
-            try {
-                boolean isAdActive = !driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Ad ') or contains(@text, 'Reward')]")).isEmpty();
-
-                // ADDED: My Collection, Discover Stones, and Popular Rocks to prevent timeouts!
-                if (!isAdActive && !driver.findElements(AppiumBy.xpath(
-                        "//*[@content-desc='Capture'] | " +
+        try {
+            while (System.currentTimeMillis() < endTime) {
+                // 1. FAST-EXIT: Check if we are already safe!
+                boolean isSafeUiVisible = !driver.findElements(AppiumBy.xpath(
+                        "//*[contains(@content-desc, 'Capture')] | " +
+                                "//*[contains(@text, 'STEP 1') or contains(@text, 'Step 1')] | " +
+                                "//*[contains(@text, 'STEP 2') or contains(@text, 'Step 2')] | " +
                                 "//*[@text='Identify Your Rock'] | " +
                                 "//*[@text='Grant Permission'] | " +
                                 "//*[@text='Continue'] | " +
@@ -188,37 +197,85 @@ public class BaseTest {
                                 "//*[@text='Watch Ad for 1 Use'] | " +
                                 "//*[@text='Crop Stone'] | " +
                                 "//*[@text='DONE'] | " +
-                                "//*[@content-desc='Save Rock'] | " +
+                                "//*[contains(@content-desc, 'Save')] | " +
                                 "//*[@content-desc='Back'] | " +
                                 "//*[@text='My Collection'] | " +
                                 "//*[@text='Discover Stones'] | " +
-                                "//*[@text='Popular Rocks']"
-                )).isEmpty()) {
-                    logStep("[ACTION] Target UI detected securely. Ad bypassed.");
+                                "//*[@text='Popular Rocks'] | " +
+                                "//*[@content-desc='Scan'] | " +
+                                "//*[@text='My Coins']"
+                )).isEmpty();
+
+                boolean hasRewardText = !driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Reward')]")).isEmpty();
+
+                // If Safe UI is there AND there is no active "Reward" timer -> Exit instantly!
+                if (isSafeUiVisible && !hasRewardText) {
+                    logStep("[ACTION] Target UI detected instantly. No ad blocking. Proceeding...");
                     return;
                 }
 
                 var adCounters = driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Ad ')] | //*[contains(@text, 'Reward')]"));
                 if (!adCounters.isEmpty()) System.out.println("   -> Ad Status: " + adCounters.getFirst().getText());
 
-                String closeXPath = "//*[@content-desc='Close' or @content-desc='close' or @text='Skip' or @text='Close' or @text='X' or contains(@resource-id, 'close') or contains(@resource-id, 'dismiss')] | //*[contains(@text, 'Reward')]/..//android.widget.Image | //*[contains(@text, 'Reward')]/following-sibling::*";
+                // 2. Identify Full-Screen WebViews (Embedded ads vs Interstitials)
+                boolean isFullScreenWebView = false;
+                var webViews = driver.findElements(AppiumBy.className("android.webkit.WebView"));
+                if (!webViews.isEmpty()) {
+                    try {
+                        int wvHeight = webViews.getFirst().getSize().getHeight();
+                        int screenHeight = driver.manage().window().getSize().getHeight();
+                        if (wvHeight > (screenHeight * 0.7)) {
+                            isFullScreenWebView = true;
+                        }
+                    } catch (Exception ignored) {}
+                }
+
+                // 3. Look for explicit close buttons
+                String closeXPath = "//*[@content-desc='Close' or @content-desc='close' or @text='Skip' or @text='Close' or @text='X' or contains(@resource-id, 'close') or contains(@resource-id, 'dismiss') or (contains(@text, 'Continue') and contains(@text, 'app')) or (contains(@text, 'Continue') and contains(@text, 'App'))] | //*[contains(@text, 'Reward')]/..//android.widget.Image | //*[contains(@text, 'Reward')]/following-sibling::*";
                 var closeBtns = driver.findElements(AppiumBy.xpath(closeXPath));
 
                 if (!closeBtns.isEmpty()) {
                     closeBtns.getFirst().click();
                     logStep("[ACTION] Tapped an Ad Close/Skip button.");
-                    Thread.sleep(3000);
+                    Thread.sleep(1500);
 
-                    if (driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Ad ') or contains(@text, 'Reward')]")).isEmpty()) {
-                        logStep("[ACTION] Ad text cleared. Assuming native UI restored.");
-                        return;
+                    // EARLY EXIT POPUP INTERCEPTOR
+                    var confirmPopups = driver.findElements(AppiumBy.xpath("//*[@text='Close video' or @text='CLOSE VIDEO' or @text='Close Video' or @text='Close ad' or @text='CLOSE AD' or @text='Close Ad' or @text='CLOSE' or @text='Close' or @text='QUIT' or @text='Quit']"));
+                    if (!confirmPopups.isEmpty()) {
+                        logStep("[ACTION] Intercepted 'Close Video?' Warning Popup. Forcing early exit...");
+                        confirmPopups.getFirst().click();
+                        Thread.sleep(1500);
+                    }
+                } else if (isFullScreenWebView) {
+                    logStep("[ACTION] Full-Screen WebView Ad active. Firing Sweeping Coordinate Strikes...");
+                    org.openqa.selenium.Dimension size = driver.manage().window().getSize();
+
+                    performTap(size.getWidth() - 50, 160); // Strike 1: Standard 'X'
+                    Thread.sleep(1000);
+
+                    var confirmPopups = driver.findElements(AppiumBy.xpath("//*[@text='Close video' or @text='CLOSE VIDEO' or @text='Close Video' or @text='Close ad' or @text='CLOSE AD' or @text='Close Ad' or @text='CLOSE' or @text='Close' or @text='QUIT' or @text='Quit']"));
+                    if (!confirmPopups.isEmpty()) {
+                        logStep("[ACTION] Intercepted 'Close Video?' Warning Popup after blind strike. Forcing exit...");
+                        confirmPopups.getFirst().click();
+                        Thread.sleep(1000);
+                    }
+
+                    if (!driver.findElements(AppiumBy.className("android.webkit.WebView")).isEmpty()) {
+                        performTap(size.getWidth() - 250, 140); // Strike 2: Continue to App pill
+                        Thread.sleep(1000);
                     }
                 } else {
-                    Thread.sleep(2000);
+                    // Nothing found, micro-sleep before checking again so we don't fry the CPU
+                    Thread.sleep(500);
                 }
-            } catch (Exception ignored) {}
+            }
+            logStep("[WARNING] AdBuster timed out after 120s. Proceeding to fallback...");
+        } catch (Exception e) {
+            logStep("[WARNING] AdBuster interrupted: " + e.getMessage());
+        }finally {
+            // 🔥 CRITICAL: Restore the standard 10-second wait so the rest of your test suite doesn't fail!
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
-        logStep("[WARNING] AdBuster timed out. Proceeding to fallback...");
     }
 
     public void collapseHalfScreenAd() {

@@ -32,7 +32,7 @@ public class MenuRunner {
 
         System.out.println(YELLOW + "\n[TARGET SELECTION]" + RESET);
         System.out.println("1. Stone Identifier");
-        System.out.println("2. Coin Identifier " + PURPLE + "(Coming Soon)" + RESET);
+        System.out.println("2. Coin Identifier " + RESET);
         System.out.print(GREEN + "\nEnter choice (1 or 2): " + RESET);
 
         int appChoice;
@@ -47,7 +47,10 @@ public class MenuRunner {
             System.setProperty("targetApp", "Stone");
             runStoneMenu(scanner);
         } else if (appChoice == 2) {
-            System.out.println(RED + "\nCoin Identifier suite is under construction. Exiting." + RESET);
+            // REPLACE THE "COMING SOON" TEXT WITH THIS:
+            System.setProperty("targetApp", "Coin");
+            System.out.println(PURPLE + "\n[PRE-CONDITION] App will be forcibly wiped and cold-started offline." + RESET);
+            executeTestNGClass("com.project.tests.CoinMasterTest");
         } else {
             System.out.println(RED + "\nInvalid selection. Exiting." + RESET);
         }
