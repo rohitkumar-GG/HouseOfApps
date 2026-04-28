@@ -1,0 +1,1459 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>House Of Apps - QA Dashboard</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Automation Execution Suite</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Apr 28, 2026 02:06:49 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Coin Identifier Execution</p>
+            <p class="text-sm">
+              <span>2:06:50 pm</span> / <span>00:05:27:976</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Coin Identifier Execution</h5>
+<span class='badge badge-success'>04.28.2026 2:06:50 pm</span>
+<span class='badge badge-danger'>04.28.2026 2:12:18 pm</span>
+<span class='badge badge-default'>00:05:27:976</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-10 m-l-5">Full End-to-End Suite for Coin</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:06:53 pm</td>
+        <td>
+          
+========== STARTING COIN IDENTIFIER MASTER FLOW ==========
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:06:53 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:06:53 pm</td>
+        <td>
+          ▶ STARTING: Test 1: Offline Boot & Recovery
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:18 pm</td>
+        <td>
+          Execution complete. Total Bugs: 5
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+  <div class="mt-4">  <div class="accordion" role="tablist">
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:33:273</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="2"><span>Test 1: Offline Boot & Recovery</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <p>Verifying app behavior without internet connection.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:06:53 pm</td>
+        <td>
+          [TEST 1] Turning OFF Wi-Fi/Data and booting app offline...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:06:54 pm</td>
+        <td>
+          [SYSTEM] Internet turned OFF (via ADB shell).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:14 pm</td>
+        <td>
+          ✅ Offline 'Retry/No Internet' prompt successfully verified.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:14 pm</td>
+        <td>
+          [ACTION] Restoring Network...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:15 pm</td>
+        <td>
+          [SYSTEM] Internet turned ON (via ADB shell).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:23 pm</td>
+        <td>
+          [TEST] Verifying Ad loads on reconnect...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          BUG: Ad failed to load upon reconnecting to internet.
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Missed_Ad_On_Reconnect_1777365446704.png' src="/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Missed_Ad_On_Reconnect_1777365446704.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          ❌ FAIL: 1 bug(s) found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          1 bug(s) recorded in this flow.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          ▶ STARTING: Test 2: Language UI Navigation
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:07:227</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="3"><span>Test 2: Language UI Navigation</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <p>Testing language selection and in-app back button constraints.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:26 pm</td>
+        <td>
+          [TEST 2] Processing Language UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:30 pm</td>
+        <td>
+          [ACTION] Testing In-App Back Button ('<-')...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          BUG: In-app back button is NON-FUNCTIONAL. No exit prompt appeared.
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Broken_InApp_BackButton_1777365453071.png' src="/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Broken_InApp_BackButton_1777365453071.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          [ACTION] Tapping Tick/Done to proceed...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          ❌ FAIL: 1 bug(s) found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          1 bug(s) recorded in this flow.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          ▶ STARTING: Test 3: FTUE Pages & Ad Verification
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class='badge badge-default'>30:09:487</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="4"><span>Test 3: FTUE Pages & Ad Verification</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <p>Validating 3-page FTUE, ad presence, and navigation.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:33 pm</td>
+        <td>
+          [TEST 3] FTUE Page 1 Ad Verification...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:35 pm</td>
+        <td>
+          [ACTION] Advancing FTUE...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:37 pm</td>
+        <td>
+          [TEST 3] FTUE Page 2 Ad Verification...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:38 pm</td>
+        <td>
+          [ACTION] Advancing FTUE...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:40 pm</td>
+        <td>
+          [TEST 3] FTUE Page 3 Ad Verification...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:41 pm</td>
+        <td>
+          [ACTION] Advancing FTUE...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:43 pm</td>
+        <td>
+          ✅ PASS: No bugs found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:07:43 pm</td>
+        <td>
+          Step passed successfully. No bugs detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:43 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:43 pm</td>
+        <td>
+          ▶ STARTING: Test 4: Subscription UI & Restore
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class='badge badge-default'>30:28:655</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="5"><span>Test 4: Subscription UI & Restore</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <p>Testing Restore Purchases and Paywall exit strategies.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:43 pm</td>
+        <td>
+          [ACTION] Selecting Subscription Tiers...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:07:49 pm</td>
+        <td>
+          [ACTION] Handling Google Play / Subscription UI Closure...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          ✅ PASS: No bugs found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          Step passed successfully. No bugs detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          ▶ STARTING: Test 5: Home Exit Prompt & Warm Start
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>30:52:153</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="6"><span>Test 5: Home Exit Prompt & Warm Start</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <p>Checking back-button exit prompt and background ad recovery.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          [TEST 5] Checking for post-onboarding Ad & Waiting for Home Tab...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:12 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:13 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:13 pm</td>
+        <td>
+          [ACTION] Checking for native half-screen ad banner...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:15 pm</td>
+        <td>
+          [ACTION] Ghost WebView detected. Relying on SafeClick Recovery for navigation.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:16 pm</td>
+        <td>
+          [TEST] Testing Home Tab Exit Prompt...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:08:30 pm</td>
+        <td>
+          BUG: Exit prompt not displayed before killing the app.
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Missing_Exit_Prompt_1777365510847.png' src="/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Missing_Exit_Prompt_1777365510847.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:30 pm</td>
+        <td>
+          [ACTION] Relaunching the app for Warm Start Ad test...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:31 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:51 pm</td>
+        <td>
+          [ACTION] Tapped an Ad Close/Skip button.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:53 pm</td>
+        <td>
+          [ACTION] Intercepted 'Close Video?' Warning Popup. Forcing early exit...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:56 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:56 pm</td>
+        <td>
+          [ACTION] Checking for Warm Start Subscription UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:08:56 pm</td>
+        <td>
+          [ACTION] Paywall detected. Dismissing natively...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:01 pm</td>
+        <td>
+          [ACTION] Checking for native half-screen ad banner...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          [ACTION] Ghost WebView detected. Relying on SafeClick Recovery for navigation.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          ❌ FAIL: 1 bug(s) found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          1 bug(s) recorded in this flow.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          ▶ STARTING: Test 6: Camera, Permissions & Offline Bugs
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge fail-bg log ">Fail</span></li>
+              <li><span class='badge badge-default'>32:16:654</span></li>
+              <li><span><i class="fa fa-paperclip"></i></span></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="7"><span>Test 6: Camera, Permissions & Offline Bugs</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card-body">
+            <p>Testing permissions, soft locks, and state clearing.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          [TEST 6] Initiating Identification Flow...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:04 pm</td>
+        <td>
+          [ACTION] Safe-clicking: Scan Coin Button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:06 pm</td>
+        <td>
+          [ACTION] Tapping 'Watch Ad for 1 Use'...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:07 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:13 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:13 pm</td>
+        <td>
+          [ACTION] Testing Camera Permission Flow...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:13 pm</td>
+        <td>
+             -> Requesting permission (1st time)...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:15 pm</td>
+        <td>
+             -> Tapping OS Deny...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:18 pm</td>
+        <td>
+             -> Requesting permission (2nd time)...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:19 pm</td>
+        <td>
+             -> Tapping OS Deny & Don't Ask Again...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:22 pm</td>
+        <td>
+          [TEST] Verifying App Soft Lock State...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:09:27 pm</td>
+        <td>
+          BUG: App soft-locked. User is unable to close the prompt and go back.
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Camera_Permission_SoftLock_1777365567270.png' src="/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/Camera_Permission_SoftLock_1777365567270.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:27 pm</td>
+        <td>
+          [SYSTEM] Teleporting to App Settings for Manual Permission...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:00 pm</td>
+        <td>
+          [ACTION] User returned to app. Engaging AdBuster to clear any 'Welcome Back' ad...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:00 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:02 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:04 pm</td>
+        <td>
+          [ACTION] Dropping network to test background upload handling...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:07 pm</td>
+        <td>
+          [ACTION] Restoring Network...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:08 pm</td>
+        <td>
+          [SYSTEM] Internet turned ON (via ADB shell).
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:14 pm</td>
+        <td>
+          [TEST] Verifying if App State was lost after offline test...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:17 pm</td>
+        <td>
+          ✅ App successfully retained the 1st image and remained on Step 2!
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:17 pm</td>
+        <td>
+          [ACTION] Pressing Device Back to exit Camera UI and test State Clearing...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:30 pm</td>
+        <td>
+          [ACTION] Handling Home Tab Interstitials...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:30 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:31 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:31 pm</td>
+        <td>
+          [ACTION] Re-initiating Identification Flow to check state clearing...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:31 pm</td>
+        <td>
+          [ACTION] Safe-clicking: Scan Coin Button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:34 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:40 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:40 pm</td>
+        <td>
+          [TEST] Verifying if Camera State was properly cleared on re-entry...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:10:42 pm</td>
+        <td>
+          BUG: Camera state did not clear after exiting to Home. App is stuck on Step 2 upon re-entry.
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/CameraState_NotCleared_OnExit_1777365642743.png' src="/Users/rohit/Documents/HouseOfApps/target/bug_screenshots/CameraState_NotCleared_OnExit_1777365642743.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:12 pm</td>
+        <td>
+          [ACTION] Bookmarking Coin and returning to Home...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:12 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:13 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:17 pm</td>
+        <td>
+          ✅ Successfully bookmarked the coin.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:18 pm</td>
+        <td>
+          [ACTION] Checking for native half-screen ad banner...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          [ACTION] Ghost WebView detected. Relying on SafeClick Recovery for navigation.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          ❌ FAIL: 2 bug(s) found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          2 bug(s) recorded in this flow.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          ▶ STARTING: Test 7: Collection & Deletion Routing
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class='badge badge-default'>30:10:376</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="8"><span>Test 7: Collection & Deletion Routing</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <p>Testing My Coins tab, deletion UI, and return routing.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          [TEST 7] Testing My Collection & Deletion Routing...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:20 pm</td>
+        <td>
+          [ACTION] Safe-clicking: My Collection Tab
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:23 pm</td>
+        <td>
+          [ACTION] Deleting the rock/coin...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:28 pm</td>
+        <td>
+          [ACTION] Safe-clicking: Home Tab
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          ✅ PASS: No bugs found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          Step passed successfully. No bugs detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          ▶ STARTING: Test 8: Background App State Preservation
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class='badge badge-default'>30:46:212</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="9"><span>Test 8: Background App State Preservation</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <p>Verifying if multi-step capture retains state after backgrounding.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          [TEST 8] Testing Background Activity Preservation during Multi-Step Capture...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:31 pm</td>
+        <td>
+          [ACTION] Checking for native half-screen ad banner...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:33 pm</td>
+        <td>
+          [ACTION] Ghost WebView detected. Relying on SafeClick Recovery for navigation.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:33 pm</td>
+        <td>
+          [ACTION] Safe-clicking: Scan Coin Button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:37 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:43 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:54 pm</td>
+        <td>
+          [ACTION] Backgrounding the app...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:58 pm</td>
+        <td>
+          [SYSTEM] App foregrounded. Intercepting Warm Start ad...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:11:58 pm</td>
+        <td>
+          [ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:01 pm</td>
+        <td>
+          [ACTION] Tapped an Ad Close/Skip button.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:05 pm</td>
+        <td>
+          [ACTION] Target UI detected instantly. No ad blocking. Proceeding...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:05 pm</td>
+        <td>
+          [TEST] Verifying Camera State...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:05 pm</td>
+        <td>
+          ✅ State successfully preserved.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:05 pm</td>
+        <td>
+          [ACTION] Routing back to Home...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:17 pm</td>
+        <td>
+          ✅ PASS: No bugs found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:12:17 pm</td>
+        <td>
+          Step passed successfully. No bugs detected.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:17 pm</td>
+        <td>
+          
+===============================================
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:17 pm</td>
+        <td>
+          ▶ STARTING: Test 9: App Data Teardown
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <div class="card-toolbar node-info">
+            <ul class="list-inline d-none d-sm-block">
+              <li><span class="badge pass-bg log ">Pass</span></li>
+              <li><span class='badge badge-default'>30:00:541</span></li>
+              <li></li>
+            </ul>
+          </div>
+          <div class="card-title">
+            <a class="node " id="10"><span>Test 9: App Data Teardown</span></a>
+            <div class="node-attr">
+            </div>
+          </div>
+        </div>
+        <div class="collapse">
+          <div class="card-body">
+            <p>Clearing app data to end the suite cleanly.</p>
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:17 pm</td>
+        <td>
+          [SYSTEM] Terminating app and clearing all app data...
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:18 pm</td>
+        <td>
+          [SYSTEM] App data cleared successfully.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:12:18 pm</td>
+        <td>
+          ✅ PASS: No bugs found in this step.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:12:18 pm</td>
+        <td>
+          Step passed successfully. No bugs detected.
+        </td>
+      </tr>
+  </tbody>
+</table>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Apr 28, 2026 02:06:49 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Apr 28, 2026 02:12:18 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>1</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='100%'><b>1</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='55%'><b>5</b> steps passed</small></div>
+<div>
+<small data-tooltip='44%'><b>4</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='3%'><b>5</b> events passed</small></div>
+<div>
+<small data-tooltip='6%'><b>9</b> events failed,
+<b data-tooltip='%'>116</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Coin Identifier Execution":327.976
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Mac OS X</td>
+</tr>
+<tr>
+<td>QA Engineer</td>
+<td>Automation Triggered</td>
+</tr>
+<tr>
+<td>Device</td>
+<td>Android Automation Device</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 1,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 5,
+failChild: 4,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 5,
+failEvents: 9,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 116
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

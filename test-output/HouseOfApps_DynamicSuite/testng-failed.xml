@@ -7,7 +7,7 @@
         <methods>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="tearDownReport"/>
+          <include name="flushReport"/>
           <include name="setupDriver"/>
           <include name="masterCoinFlowTest"/>
         </methods>

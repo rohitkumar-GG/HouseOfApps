@@ -23,6 +23,7 @@ public class CoinMasterTest extends BaseTest {
         // =========================================================
         // TEST 1: OFFLINE BOOT & RECOVERY
         // =========================================================
+        beginTestStep("Test 1: Offline Boot & Recovery", "Verifying app behavior without internet connection.");
         logStep("[TEST 1] Turning OFF Wi-Fi/Data and booting app offline...");
         setNetworkState(false);
         driver.activateApp(appPackage);
@@ -45,10 +46,12 @@ public class CoinMasterTest extends BaseTest {
             reportBug("Ad failed to load upon reconnecting to internet.", "Missed_Ad_On_Reconnect");
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        endTestStep();
 
         // =========================================================
         // TEST 2: LANGUAGE UI & BACK BUTTON BUG
         // =========================================================
+        beginTestStep("Test 2: Language UI Navigation", "Testing language selection and in-app back button constraints.");
         logStep("[TEST 2] Processing Language UI...");
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 
@@ -67,10 +70,12 @@ public class CoinMasterTest extends BaseTest {
 
         logStep("[ACTION] Tapping Tick/Done to proceed...");
         driver.findElement(AppiumBy.xpath("//*[@content-desc='Done' or @text='✓' or contains(@resource-id, 'done')] | //android.widget.ImageView[last()]")).click();
+        endTestStep();
 
         // =========================================================
         // TEST 3: FTUE PAGES
         // =========================================================
+        beginTestStep("Test 3: FTUE Pages & Ad Verification", "Validating 3-page FTUE, ad presence, and navigation.");
         for (int i = 1; i <= 3; i++) {
             logStep("[TEST 3] FTUE Page " + i + " Ad Verification...");
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -89,10 +94,12 @@ public class CoinMasterTest extends BaseTest {
             }
             Thread.sleep(1500);
         }
+        endTestStep();
 
         // =========================================================
         // TEST 4: SUBSCRIPTION UI (UPDATED CLOSE LOGIC)
         // =========================================================
+        beginTestStep("Test 4: Subscription UI & Restore", "Testing Restore Purchases and Paywall exit strategies.");
         logStep("[ACTION] Selecting Subscription Tiers...");
         try { driver.findElement(AppiumBy.xpath("//*[contains(@text, 'Week')]")).click(); } catch(Exception ignored) {}
         try { driver.findElement(AppiumBy.xpath("//*[contains(@text, 'Month')]")).click(); } catch(Exception ignored) {}
@@ -128,10 +135,12 @@ public class CoinMasterTest extends BaseTest {
                 Thread.sleep(1000);
             }
         }
+        endTestStep();
 
         // =========================================================
         // TEST 5: HOME EXIT PROMPT & WARM START
         // =========================================================
+        beginTestStep("Test 5: Home Exit Prompt & Warm Start", "Checking back-button exit prompt and background ad recovery.");
         logStep("[TEST 5] Checking for post-onboarding Ad & Waiting for Home Tab...");
 
         // Catch the interstitial ad that developers love to trigger right after the paywall closes!
@@ -186,10 +195,12 @@ public class CoinMasterTest extends BaseTest {
 
         // 3. Clear the Banner Ad
         collapseHalfScreenAd();
+        endTestStep();
 
         // =========================================================
         // TEST 6: CAMERA, PERMISSIONS, & OFFLINE PROCESSING BUG
         // =========================================================
+        beginTestStep("Test 6: Camera, Permissions & Offline Bugs", "Testing permissions, soft locks, and state clearing.");
         logStep("[TEST 6] Initiating Identification Flow...");
         safeClick(AppiumBy.xpath("//*[@content-desc='Scan']"), "Scan Coin Button");
 
@@ -259,8 +270,6 @@ public class CoinMasterTest extends BaseTest {
         // =========================================================
         // RESUMING: THE OFFLINE PROCESSING RACE CONDITION
         // =========================================================
-        // THE FIX: We REMOVED the script clicking the Capture button here!
-        // We just drop the network while on Step 2 to test background upload handling.
         logStep("[ACTION] Dropping network to test background upload handling...");
 
         driver.executeScript("mobile: shell", java.util.Map.of("command", "svc", "args", java.util.Arrays.asList("wifi", "disable")));
@@ -350,10 +359,12 @@ public class CoinMasterTest extends BaseTest {
         // Tap the back button to exit the description page
         driver.findElement(AppiumBy.xpath("//*[@content-desc='Back' or @content-desc='Navigate up']")).click();
         collapseHalfScreenAd();
+        endTestStep();
 
         // =========================================================
         // TEST 7: COLLECTION & DELETION
         // =========================================================
+        beginTestStep("Test 7: Collection & Deletion Routing", "Testing My Coins tab, deletion UI, and return routing.");
         logStep("[TEST 7] Testing My Collection & Deletion Routing...");
         safeClick(AppiumBy.xpath("//*[@text='My Coins' or @content-desc='My Collection' or @text='My Collection']"), "My Collection Tab");
 
@@ -369,10 +380,12 @@ public class CoinMasterTest extends BaseTest {
         }
 
         safeClick(AppiumBy.xpath("//*[@content-desc='Home' or @text='Home']"), "Home Tab");
+        endTestStep();
 
         // =========================================================
         // TEST 8: BACKGROUND APP STATE PRESERVATION
         // =========================================================
+        beginTestStep("Test 8: Background App State Preservation", "Verifying if multi-step capture retains state after backgrounding.");
         logStep("[TEST 8] Testing Background Activity Preservation during Multi-Step Capture...");
         collapseHalfScreenAd();
         safeClick(AppiumBy.xpath("//*[@content-desc='Scan']"), "Scan Coin Button");
@@ -394,7 +407,6 @@ public class CoinMasterTest extends BaseTest {
         closeInterstitialAds();
 
         logStep("[TEST] Verifying Camera State...");
-        // THE FIX: Added the case-insensitive 'STEP 2' check that we used in Test 6!
         if (driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Step 2') or contains(@text, 'STEP 2')]")).isEmpty()) {
             reportBug("Camera step state lost after backgrounding. App did not retain the 1st photo.", "StateLoss_Camera_Backgrounding");
         } else {
@@ -413,13 +425,31 @@ public class CoinMasterTest extends BaseTest {
                 Thread.sleep(1500);
             } catch (Exception ignored) {}
         }
+        endTestStep();
+
         // =========================================================
-        // TEST 9: TEARDOWN (Handled in BaseTest)
+        // TEST 9: TEARDOWN & CLEAR APP DATA
+        // =========================================================
+        beginTestStep("Test 9: App Data Teardown", "Clearing app data to end the suite cleanly.");
+        clearAppData();
+        endTestStep();
+
+        // =========================================================
+        // FINAL DASHBOARD REPORTING
         // =========================================================
         System.out.println("\n===============================================");
-        logStep("🎉 COIN IDENTIFIER SUITE FINISHED. 🎉");
-        logStep("Total Bugs Logged: " + totalBugCount);
+        System.out.println("📊 HOUSE OF APPS - SUITE SUMMARY");
+        System.out.println("===============================================");
+        System.out.println("Total Logical Tests : " + (passedLogicalTests + failedLogicalTests));
+        System.out.println("✅ Passes           : " + passedLogicalTests);
+        System.out.println("❌ Failures         : " + failedLogicalTests);
+        System.out.println("⚠️ Total Bugs Logged: " + totalBugCount);
+        System.out.println("📄 HTML Report      : " + System.getProperty("user.dir") + "/target/Automation_Report.html");
         System.out.println("===============================================\n");
+
+        if (suiteLog != null) {
+            suiteLog.info("Execution complete. Total Bugs: " + totalBugCount);
+        }
 
         softAssert.assertAll();
         Assert.assertEquals(totalBugCount, 0, "Suite completed, but " + totalBugCount + " bugs were found! Check the HTML report.");

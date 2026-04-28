@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-28T13:16:37 IST" name="HouseOfApps_DynamicSuite" finished-at="2026-04-28T13:22:07 IST" duration-ms="329402">
+  <suite started-at="2026-04-28T14:06:50 IST" name="HouseOfApps_DynamicSuite" finished-at="2026-04-28T14:12:18 IST" duration-ms="328439">
     <groups>
     </groups>
-    <test started-at="2026-04-28T13:16:37 IST" name="Isolated_Feature_Test" finished-at="2026-04-28T13:22:07 IST" duration-ms="329402">
+    <test started-at="2026-04-28T14:06:50 IST" name="Isolated_Feature_Test" finished-at="2026-04-28T14:12:18 IST" duration-ms="328439">
       <class name="com.project.tests.CoinMasterTest">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.project.tests.CoinMasterTest@106446e9]" started-at="2026-04-28T13:16:37 IST" name="setupReport" finished-at="2026-04-28T13:16:37 IST" duration-ms="41" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.project.tests.CoinMasterTest@12fd8161]" started-at="2026-04-28T14:06:49 IST" name="setupReport" finished-at="2026-04-28T14:06:50 IST" duration-ms="48" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.CoinMasterTest@106446e9]" started-at="2026-04-28T13:16:37 IST" name="setupDriver" finished-at="2026-04-28T13:16:41 IST" duration-ms="3501" status="PASS">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.CoinMasterTest@12fd8161]" started-at="2026-04-28T14:06:50 IST" name="setupDriver" finished-at="2026-04-28T14:06:53 IST" duration-ms="3397" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method signature="masterCoinFlowTest()[pri:0, instance:com.project.tests.CoinMasterTest@106446e9]" started-at="2026-04-28T13:16:41 IST" name="masterCoinFlowTest" finished-at="2026-04-28T13:22:06 IST" duration-ms="325237" status="FAIL">
+        <test-method signature="masterCoinFlowTest()[pri:0, instance:com.project.tests.CoinMasterTest@12fd8161]" started-at="2026-04-28T14:06:53 IST" name="masterCoinFlowTest" finished-at="2026-04-28T14:12:18 IST" duration-ms="324586" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Suite completed, but 5 bugs were found! Check the HTML report. expected [0] but found [5]]]>
@@ -28,7 +28,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:150)
 at org.testng.Assert.assertEquals(Assert.java:132)
 at org.testng.Assert.assertEquals(Assert.java:1419)
 at org.testng.Assert.assertEquals(Assert.java:1383)
-at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:425)
+at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:455)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:565)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -67,14 +67,14 @@ at java.base/java.lang.Thread.run(Thread.java:1516)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- masterCoinFlowTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.CoinMasterTest@106446e9]" started-at="2026-04-28T13:22:06 IST" name="tearDown" finished-at="2026-04-28T13:22:07 IST" duration-ms="657" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.CoinMasterTest@12fd8161]" started-at="2026-04-28T14:12:18 IST" name="tearDown" finished-at="2026-04-28T14:12:18 IST" duration-ms="449" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDownReport()[pri:0, instance:com.project.tests.CoinMasterTest@106446e9]" started-at="2026-04-28T13:22:07 IST" name="tearDownReport" finished-at="2026-04-28T13:22:07 IST" duration-ms="77" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.project.tests.CoinMasterTest@12fd8161]" started-at="2026-04-28T14:12:18 IST" name="flushReport" finished-at="2026-04-28T14:12:18 IST" duration-ms="86" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownReport -->
+        </test-method> <!-- flushReport -->
       </class> <!-- com.project.tests.CoinMasterTest -->
     </test> <!-- Isolated_Feature_Test -->
   </suite> <!-- HouseOfApps_DynamicSuite -->

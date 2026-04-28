@@ -4,13 +4,13 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -24,28 +24,42 @@ public class BaseTest {
     protected AndroidDriver driver;
     protected String appPackage;
 
+    // Reporting & Step Engine Variables
     protected static ExtentReports extent;
     protected static ExtentTest testLog;
     protected int totalBugCount = 0;
+    protected int passedLogicalTests = 0;
+    protected int failedLogicalTests = 0;
+    protected int currentStepBugs = 0;
+    protected ExtentTest suiteLog;
+    protected ExtentTest currentStepLog;
 
     @BeforeSuite
     public void setupReport() {
-        ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/target/Automation_Report.html");
-        spark.config().setDocumentTitle("House Of Apps - Test Report");
-        spark.config().setReportName("Stone Identifier Automation Suite");
+        // Creates a beautiful dark-mode HTML report in your project folder
+        ExtentSparkReporter spark = new ExtentSparkReporter(System.getProperty("user.dir") + "/HouseOfApps_Report.html");
+        spark.config().setDocumentTitle("House Of Apps - QA Dashboard");
+        spark.config().setReportName("Automation Execution Suite");
+        spark.config().setTheme(Theme.DARK);
 
         extent = new ExtentReports();
         extent.attachReporter(spark);
-        extent.setSystemInfo("Device", "Xiaomi POCO F1");
-        extent.setSystemInfo("Platform", "Android 10");
+        extent.setSystemInfo("OS", System.getProperty("os.name"));
+        extent.setSystemInfo("QA Engineer", "Automation Triggered");
+        extent.setSystemInfo("Device", "Android Automation Device");
     }
 
     @BeforeMethod
     public void setupDriver() throws Exception {
         totalBugCount = 0;
-        testLog = extent.createTest("Automation Execution Flow");
+        passedLogicalTests = 0;
+        failedLogicalTests = 0;
 
         String appTarget = System.getProperty("targetApp", "Stone");
+
+        // Initialize the Master Suite Log for the HTML Report
+        suiteLog = extent.createTest(appTarget + " Identifier Execution", "Full End-to-End Suite for " + appTarget);
+        testLog = suiteLog; // Fallback
 
         // DYNAMIC PACKAGE ASSIGNMENT
         if (appTarget.equalsIgnoreCase("Coin")) {
@@ -65,7 +79,7 @@ public class BaseTest {
         options.setCapability("appium:disableWindowAnimation", true);
         options.setCapability("appium:waitForIdleTimeout", 100);
 
-        // 🔥 THE FIX: Prevent Appium from killing the session during manual interventions!
+        // Prevent Appium from killing the session during manual interventions
         options.setCapability("appium:newCommandTimeout", 3600);
 
         options.setAppPackage(appPackage);
@@ -75,6 +89,31 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 
+    // ==========================================
+    // LOGICAL STEP ENGINE
+    // ==========================================
+    public void beginTestStep(String stepName, String description) {
+        logStep("\n===============================================");
+        logStep("▶ STARTING: " + stepName);
+        if (suiteLog != null) {
+            currentStepLog = suiteLog.createNode(stepName, description);
+            testLog = currentStepLog; // Direct subsequent logs to this specific node
+        }
+        currentStepBugs = 0; // Reset bugs for this specific step
+    }
+
+    public void endTestStep() {
+        if (currentStepBugs == 0) {
+            logStep("✅ PASS: No bugs found in this step.");
+            if (currentStepLog != null) currentStepLog.pass("Step passed successfully. No bugs detected.");
+            passedLogicalTests++;
+        } else {
+            logStep("❌ FAIL: " + currentStepBugs + " bug(s) found in this step.");
+            if (currentStepLog != null) currentStepLog.fail(currentStepBugs + " bug(s) recorded in this flow.");
+            failedLogicalTests++;
+        }
+    }
+
     public void logStep(String message) {
         System.out.println(message);
         if(testLog != null) testLog.info(message);
@@ -82,22 +121,28 @@ public class BaseTest {
 
     public void reportBug(String bugMessage, String screenshotName) {
         totalBugCount++;
-        System.out.println("❌ BUG FOUND: " + bugMessage);
+        currentStepBugs++; // Track bugs per individual step
+        System.out.println("\u001B[31m" + "❌ BUG FOUND: " + bugMessage + "\u001B[0m");
         try {
             File scrFile = driver.getScreenshotAs(OutputType.FILE);
             String fileName = screenshotName + "_" + System.currentTimeMillis() + ".png";
             String filePath = System.getProperty("user.dir") + "/target/bug_screenshots/" + fileName;
             FileUtils.copyFile(scrFile, new File(filePath));
 
-            if(testLog != null) {
+            if(currentStepLog != null) {
+                currentStepLog.fail("BUG: " + bugMessage, MediaEntityBuilder.createScreenCaptureFromPath(filePath).build());
+            } else if (testLog != null) {
                 testLog.fail("BUG: " + bugMessage, MediaEntityBuilder.createScreenCaptureFromPath(filePath).build());
             }
         } catch (Exception e) {
             System.out.println("[ERROR] Failed to take screenshot: " + e.getMessage());
-            if(testLog != null) testLog.fail("BUG: " + bugMessage + " (Screenshot Failed)");
+            if(currentStepLog != null) currentStepLog.fail("BUG: " + bugMessage + " (Screenshot Failed)");
         }
     }
 
+    // ==========================================
+    // UTILITIES & RECOVERY
+    // ==========================================
     public void setNetworkState(boolean internetEnabled) {
         try {
             if (internetEnabled) {
@@ -115,16 +160,13 @@ public class BaseTest {
         }
     }
 
-    // ==========================================
-    // THE SAFE-CLICK PLAY STORE RECOVERY
-    // ==========================================
     public void safeClick(By locator, String elementName) {
         logStep("[ACTION] Safe-clicking: " + elementName);
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             org.openqa.selenium.WebElement element = driver.findElement(locator);
             element.click();
-            Thread.sleep(1500); // Allow OS transition if Play Store was hit
+            Thread.sleep(1500);
 
             String currentPkg = driver.getCurrentPackage();
             if (currentPkg != null && !currentPkg.equals(appPackage)) {
@@ -138,11 +180,9 @@ public class BaseTest {
                 }
 
                 logStep("[ACTION] Re-attempting via Bottom-Edge Coordinate Strike...");
-                // THE FIX: Re-find the element because the old one is stale after leaving the app!
                 element = driver.findElement(locator);
                 org.openqa.selenium.Point loc = element.getLocation();
                 org.openqa.selenium.Dimension size = element.getSize();
-                // Tap 5 pixels above the absolute bottom edge of the button to slip under the ad's hitbox
                 int safeY = loc.getY() + size.getHeight() - 5;
                 int safeX = loc.getX() + (size.getWidth() / 2);
                 performTap(safeX, safeY);
@@ -155,9 +195,6 @@ public class BaseTest {
         }
     }
 
-    // ==========================================
-    // NEW: AUTO-POPUP DISMISSER
-    // ==========================================
     public void dismissPopups() {
         try {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2));
@@ -174,13 +211,11 @@ public class BaseTest {
     // ==========================================
     // UPGRADED AD BUSTERS
     // ==========================================
-
     @SuppressWarnings("BusyWait")
     public void closeInterstitialAds() {
         logStep("[ACTION] AdBuster Engaged: Quick-scanning for Ads or Target UI...");
         long endTime = System.currentTimeMillis() + 120000;
 
-        // 🔥 THE SPEED FIX: Drop the wait time to 500ms so Appium doesn't freeze looking for missing ads!
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(500));
 
         try {
@@ -208,7 +243,6 @@ public class BaseTest {
 
                 boolean hasRewardText = !driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Reward')]")).isEmpty();
 
-                // If Safe UI is there AND there is no active "Reward" timer -> Exit instantly!
                 if (isSafeUiVisible && !hasRewardText) {
                     logStep("[ACTION] Target UI detected instantly. No ad blocking. Proceeding...");
                     return;
@@ -217,7 +251,6 @@ public class BaseTest {
                 var adCounters = driver.findElements(AppiumBy.xpath("//*[contains(@text, 'Ad ')] | //*[contains(@text, 'Reward')]"));
                 if (!adCounters.isEmpty()) System.out.println("   -> Ad Status: " + adCounters.getFirst().getText());
 
-                // 2. Identify Full-Screen WebViews (Embedded ads vs Interstitials)
                 boolean isFullScreenWebView = false;
                 var webViews = driver.findElements(AppiumBy.className("android.webkit.WebView"));
                 if (!webViews.isEmpty()) {
@@ -230,7 +263,6 @@ public class BaseTest {
                     } catch (Exception ignored) {}
                 }
 
-                // 3. Look for explicit close buttons
                 String closeXPath = "//*[@content-desc='Close' or @content-desc='close' or @text='Skip' or @text='Close' or @text='X' or contains(@resource-id, 'close') or contains(@resource-id, 'dismiss') or (contains(@text, 'Continue') and contains(@text, 'app')) or (contains(@text, 'Continue') and contains(@text, 'App'))] | //*[contains(@text, 'Reward')]/..//android.widget.Image | //*[contains(@text, 'Reward')]/following-sibling::*";
                 var closeBtns = driver.findElements(AppiumBy.xpath(closeXPath));
 
@@ -239,7 +271,6 @@ public class BaseTest {
                     logStep("[ACTION] Tapped an Ad Close/Skip button.");
                     Thread.sleep(1500);
 
-                    // EARLY EXIT POPUP INTERCEPTOR
                     var confirmPopups = driver.findElements(AppiumBy.xpath("//*[@text='Close video' or @text='CLOSE VIDEO' or @text='Close Video' or @text='Close ad' or @text='CLOSE AD' or @text='Close Ad' or @text='CLOSE' or @text='Close' or @text='QUIT' or @text='Quit']"));
                     if (!confirmPopups.isEmpty()) {
                         logStep("[ACTION] Intercepted 'Close Video?' Warning Popup. Forcing early exit...");
@@ -265,15 +296,13 @@ public class BaseTest {
                         Thread.sleep(1000);
                     }
                 } else {
-                    // Nothing found, micro-sleep before checking again so we don't fry the CPU
                     Thread.sleep(500);
                 }
             }
             logStep("[WARNING] AdBuster timed out after 120s. Proceeding to fallback...");
         } catch (Exception e) {
             logStep("[WARNING] AdBuster interrupted: " + e.getMessage());
-        }finally {
-            // 🔥 CRITICAL: Restore the standard 10-second wait so the rest of your test suite doesn't fail!
+        } finally {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
     }
@@ -301,7 +330,6 @@ public class BaseTest {
     // ==========================================
     // PRECISION INPUT & SCROLLING (W3C ACTIONS)
     // ==========================================
-
     public void performDoubleTap(org.openqa.selenium.WebElement element) {
         try {
             org.openqa.selenium.Dimension size = element.getSize();
@@ -320,10 +348,7 @@ public class BaseTest {
             tapSequence.addAction(finger.createPointerMove(Duration.ZERO, org.openqa.selenium.interactions.PointerInput.Origin.viewport(), x, y));
             tapSequence.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
             tapSequence.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
-
-            // THE FIX: Micro-delay adjusted to 50ms for lightning-fast double tap
             tapSequence.addAction(new org.openqa.selenium.interactions.Pause(finger, Duration.ofMillis(50)));
-
             tapSequence.addAction(finger.createPointerDown(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
             tapSequence.addAction(finger.createPointerUp(org.openqa.selenium.interactions.PointerInput.MouseButton.LEFT.asArg()));
             driver.perform(java.util.Arrays.asList(tapSequence));
@@ -387,17 +412,15 @@ public class BaseTest {
 
     @AfterMethod
     public void tearDown() {
-        // COMMENTED OUT FOR DEBUGGING: Prevents app wipe if test crashes!
-        // clearAppData();
         if (driver != null) {
             driver.quit();
         }
     }
 
     @AfterSuite
-    public void tearDownReport() {
+    public void flushReport() {
         if (extent != null) {
-            extent.flush();
+            extent.flush(); // Saves the HTML file!
         }
     }
 }
