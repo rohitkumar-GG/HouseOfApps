@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Apr 28 14:06:50 IST 2026</td>
+<td>Started on:</td><td>Wed May 06 16:40:05 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>328 seconds (328439 ms)</td>
+<tr><td>Total time:</td><td>1011 seconds (1011390 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,28 +76,37 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.project.tests.CoinMasterTest.masterCoinFlowTest()'><b>masterCoinFlowTest</b><br>Test class: com.project.tests.CoinMasterTest</td>
-<td><div><pre>java.lang.AssertionError: Suite completed, but 5 bugs were found! Check the HTML report. expected [0] but found [5]
-	at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:455)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
-	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:137)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:53)
+<td title='com.project.tests.OnboardingTest.masterOnboardingFlowTest()'><b>masterOnboardingFlowTest</b><br>Test class: com.project.tests.OnboardingTest</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text=&apos;Description&apos; or contains(@text, &apos;Description&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;21.0.11&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:141)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:119)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:49)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
 	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
-	at java.base/java.lang.Thread.run(Thread.java:1516)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1170683733", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1170683733'><pre>java.lang.AssertionError: Suite completed, but 5 bugs were found! Check the HTML report. expected [0] but found [5]
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1578)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:1419)
-	at org.testng.Assert.assertEquals(Assert.java:1383)
-	at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:455)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace996816061", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace996816061'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text=&apos;Description&apos; or contains(@text, &apos;Description&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;21.0.11&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
 	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
@@ -106,7 +115,7 @@ function toggleAllBoxes() {
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at org.testng.TestRunner.privateRun(TestRunner.java:739)
 	at org.testng.TestRunner.run(TestRunner.java:614)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
@@ -119,18 +128,19 @@ function toggleAllBoxes() {
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
 	at org.testng.TestNG.runSuites(TestNG.java:1112)
 	at org.testng.TestNG.run(TestNG.java:1079)
-	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:137)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:53)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:141)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:119)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:49)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
 	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
-	at java.base/java.lang.Thread.run(Thread.java:1516)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
 </pre></div></td>
-<td>324</td>
-<td>com.project.tests.CoinMasterTest@12fd8161</td></tr>
+<td>1007</td>
+<td>com.project.tests.OnboardingTest@4443d071</td></tr>
 </table><p>
 </body>
 </html>

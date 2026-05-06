@@ -9,20 +9,28 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">HouseOfApps_DynamicSuite</th></tr>
-<tr><td><a href="#t0">Isolated_Feature_Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">328,439</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Isolated_Feature_Test</a></td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">1,011,390</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">HouseOfApps_DynamicSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Isolated_Feature_Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.project.tests.CoinMasterTest</td><td><a href="#m0">masterCoinFlowTest</a></td><td rowspan="1">1777365413442</td><td rowspan="1">324586</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">HouseOfApps_DynamicSuite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Isolated_Feature_Test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.project.tests.OnboardingTest</td><td><a href="#m0">masterOnboardingFlowTest</a></td><td rowspan="1">1778065808495</td><td rowspan="1">1007331</td></tr></tbody>
 </table>
-<h2>Isolated_Feature_Test</h2><h3 id="m0">com.project.tests.CoinMasterTest#masterCoinFlowTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: Suite completed, but 5 bugs were found! Check the HTML report. expected [0] but found [5]
-	at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:455)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
-	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:137)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:53)
+<h2>Isolated_Feature_Test</h2><h3 id="m0">com.project.tests.OnboardingTest#masterOnboardingFlowTest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text=&apos;Description&apos; or contains(@text, &apos;Description&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;21.0.11&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:141)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:119)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:49)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
 	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
-	at java.base/java.lang.Thread.run(Thread.java:1516)
-... Removed 30 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 24 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

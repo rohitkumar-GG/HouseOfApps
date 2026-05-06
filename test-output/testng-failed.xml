@@ -3,15 +3,15 @@
 <suite name="Failed suite [HouseOfApps_DynamicSuite]">
   <test thread-count="5" name="Isolated_Feature_Test(failed)">
     <classes>
-      <class name="com.project.tests.CoinMasterTest">
+      <class name="com.project.tests.OnboardingTest">
         <methods>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="flushReport"/>
           <include name="setupDriver"/>
-          <include name="masterCoinFlowTest"/>
+          <include name="flushReport"/>
+          <include name="masterOnboardingFlowTest"/>
         </methods>
-      </class> <!-- com.project.tests.CoinMasterTest -->
+      </class> <!-- com.project.tests.OnboardingTest -->
     </classes>
   </test> <!-- Isolated_Feature_Test(failed) -->
 </suite> <!-- Failed suite [HouseOfApps_DynamicSuite] -->

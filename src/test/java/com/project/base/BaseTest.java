@@ -33,6 +33,7 @@ public class BaseTest {
     protected int currentStepBugs = 0;
     protected ExtentTest suiteLog;
     protected ExtentTest currentStepLog;
+    protected org.openqa.selenium.support.ui.WebDriverWait wait;
 
     @BeforeSuite
     public void setupReport() {
@@ -64,6 +65,8 @@ public class BaseTest {
         // DYNAMIC PACKAGE ASSIGNMENT
         if (appTarget.equalsIgnoreCase("Coin")) {
             appPackage = "app.coinidentifier.checker.scanner";
+        } else if (appTarget.equalsIgnoreCase("FileRecovery")) {
+            appPackage = "com.filerecovery.photovideo.restore";
         } else {
             appPackage = "rock.identifier.diamond.gem.stone.mineral.finder.scanner";
         }
@@ -87,6 +90,7 @@ public class BaseTest {
 
         driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        wait = new org.openqa.selenium.support.ui.WebDriverWait(driver, Duration.ofSeconds(15));
     }
 
     // ==========================================

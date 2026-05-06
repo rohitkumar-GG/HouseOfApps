@@ -32,8 +32,9 @@ public class MenuRunner {
 
         System.out.println(YELLOW + "\n[TARGET SELECTION]" + RESET);
         System.out.println("1. Stone Identifier");
-        System.out.println("2. Coin Identifier " + RESET);
-        System.out.print(GREEN + "\nEnter choice (1 or 2): " + RESET);
+        System.out.println("2. Coin Identifier");
+        System.out.println("3. File Recovery" + RESET);
+        System.out.print(GREEN + "\nEnter choice (1-3): " + RESET);
 
         int appChoice;
         try {
@@ -47,10 +48,13 @@ public class MenuRunner {
             System.setProperty("targetApp", "Stone");
             runStoneMenu(scanner);
         } else if (appChoice == 2) {
-            // REPLACE THE "COMING SOON" TEXT WITH THIS:
             System.setProperty("targetApp", "Coin");
             System.out.println(PURPLE + "\n[PRE-CONDITION] App will be forcibly wiped and cold-started offline." + RESET);
             executeTestNGClass("com.project.tests.CoinMasterTest");
+        } else if (appChoice == 3) {
+            System.setProperty("targetApp", "FileRecovery");
+            System.out.println(PURPLE + "\n[PRE-CONDITION] Network will be dropped on start to verify Offline UI." + RESET);
+            executeTestNGClass("com.project.tests.FileRecoveryTest");
         } else {
             System.out.println(RED + "\nInvalid selection. Exiting." + RESET);
         }

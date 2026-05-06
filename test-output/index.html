@@ -103,7 +103,7 @@
                     <div class="method-list-content failed suite-HouseOfApps_DynamicSuite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" title="com.project.tests.CoinMasterTest" class="method navigator-link" hash-for-method="masterCoinFlowTest">masterCoinFlowTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-HouseOfApps_DynamicSuite" title="com.project.tests.OnboardingTest" class="method navigator-link" hash-for-method="masterOnboardingFlowTest">masterOnboardingFlowTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-HouseOfApps_DynamicSuite -->
@@ -121,25 +121,33 @@
           <div class="suite-HouseOfApps_DynamicSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
               <img src="failed.png"/>
-              <span class="class-name">com.project.tests.CoinMasterTest</span>
+              <span class="class-name">com.project.tests.OnboardingTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="masterCoinFlowTest">
-                  </a> <!-- masterCoinFlowTest -->
-                  <span class="method-name">masterCoinFlowTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: Suite completed, but 5 bugs were found! Check the HTML report. expected [0] but found [5]
-	at com.project.tests.CoinMasterTest.masterCoinFlowTest(CoinMasterTest.java:455)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1612)
-	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:137)
-	at com.project.cli.MenuRunner.main(MenuRunner.java:53)
+                  <a name="masterOnboardingFlowTest">
+                  </a> <!-- masterOnboardingFlowTest -->
+                  <span class="method-name">masterOnboardingFlowTest</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text=&apos;Description&apos; or contains(@text, &apos;Description&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;21.0.11&apos;
+Driver info: io.appium.java_client.android.AndroidDriver
+Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:141)
+	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:119)
+	at com.project.cli.MenuRunner.main(MenuRunner.java:49)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.executeMainMethod(AbstractExecJavaBase.java:402)
 	at org.codehaus.mojo.exec.ExecJavaMojo.executeMainMethod(ExecJavaMojo.java:142)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
-	at java.base/java.lang.Thread.run(Thread.java:1516)
-... Removed 30 stack frames
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+... Removed 24 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -156,7 +164,7 @@
 &lt;suite name=&quot;HouseOfApps_DynamicSuite&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Isolated_Feature_Test&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.project.tests.CoinMasterTest&quot;/&gt;
+      &lt;class name=&quot;com.project.tests.OnboardingTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Isolated_Feature_Test --&gt;
 &lt;/suite&gt; &lt;!-- HouseOfApps_DynamicSuite --&gt;
@@ -198,14 +206,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'masterCoinFlowTest')
-data.setCell(0, 2, 'com.project.tests.CoinMasterTest')
-data.setCell(0, 3, 324586);
+data.setCell(0, 1, 'masterOnboardingFlowTest')
+data.setCell(0, 2, 'com.project.tests.OnboardingTest')
+data.setCell(0, 3, 1007331);
 window.suiteTableData['HouseOfApps_DynamicSuite']= { tableData: data, tableDiv: 'times-div-HouseOfApps_DynamicSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 minutes</span>
+              <span class="suite-total-time">Total running time: 16 minutes</span>
               <div id="times-div-HouseOfApps_DynamicSuite">
               </div> <!-- times-div-HouseOfApps_DynamicSuite -->
             </div> <!-- times-div -->
@@ -231,28 +239,28 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.project.tests.CoinMasterTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.project.tests.OnboardingTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setupReport</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setupDriver</span>
-                <span class="method-start">52 ms</span>
+                <span class="method-start">61 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">masterCoinFlowTest</span>
-                <span class="method-start">3449 ms</span>
+                <span class="method-name">masterOnboardingFlowTest</span>
+                <span class="method-start">3513 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">328036 ms</span>
+                <span class="method-start">1010846 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">flushReport</span>
-                <span class="method-start">328509 ms</span>
+                <span class="method-start">1011474 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
