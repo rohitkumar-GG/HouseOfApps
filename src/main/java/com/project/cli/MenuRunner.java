@@ -1,3 +1,4 @@
+// File: src/main/java/com/project/cli/MenuRunner.java
 package com.project.cli;
 
 import org.testng.TestNG;
@@ -11,9 +12,6 @@ import java.util.Scanner;
 
 public class MenuRunner {
 
-    // ==========================================
-    // ANSI ESCAPE CODES FOR TERMINAL COLORS
-    // ==========================================
     public static final String RESET = "\033[0m";
     public static final String BOLD = "\033[1m";
     public static final String RED = "\033[31m";
@@ -25,7 +23,6 @@ public class MenuRunner {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // 1. Draw the Main Header
         System.out.println(CYAN + BOLD + "======================================================" + RESET);
         System.out.println(CYAN + BOLD + "      🚀 HOUSE OF APPS - AUTOMATION TERMINAL 🚀      " + RESET);
         System.out.println(CYAN + BOLD + "======================================================" + RESET);
@@ -50,23 +47,20 @@ public class MenuRunner {
         } else if (appChoice == 2) {
             System.setProperty("targetApp", "Coin");
             System.out.println(PURPLE + "\n[PRE-CONDITION] App will be forcibly wiped and cold-started offline." + RESET);
-            executeTestNGClass("com.project.tests.CoinMasterTest");
+            executeTestNGClass("com.project.tests.coin.CoinMasterTest");
         } else if (appChoice == 3) {
             System.setProperty("targetApp", "FileRecovery");
             System.out.println(PURPLE + "\n[PRE-CONDITION] Network will be dropped on start to verify Offline UI." + RESET);
-            executeTestNGClass("com.project.tests.FileRecoveryTest");
+            executeTestNGClass("com.project.tests.recovery.FileRecoveryTest");
         } else {
             System.out.println(RED + "\nInvalid selection. Exiting." + RESET);
         }
     }
 
-    // ==========================================
-    // STONE IDENTIFIER SUB-MENU
-    // ==========================================
     private static void runStoneMenu(Scanner scanner) {
         System.out.println(CYAN + BOLD + "\n--- \uD83E\uDEA8 STONE IDENTIFIER SUITE ---" + RESET);
         System.out.println(YELLOW + "Select execution mode:" + RESET);
-        System.out.println("1. " + BOLD + "Master Onboarding Flow" + RESET + " (Full 23-Step Suite - Wipes App Data)");
+        System.out.println("1. " + BOLD + "Master Onboarding Flow" + RESET + " (Full 25-Step Suite - Wipes App Data)");
         System.out.println("2. Camera & AI Identification Test (Isolated)");
         System.out.println("3. Collection & Deletion Routing Test (Isolated)");
         System.out.println("4. Search & Carousel Navigation Test (Isolated)");
@@ -82,40 +76,38 @@ public class MenuRunner {
 
         String targetClass = "";
 
-        // 4. Pre-Condition Handlers
         switch (testChoice) {
             case 1:
                 System.out.println(PURPLE + "\n[PRE-CONDITION] App will be forcibly wiped and cold-started offline." + RESET);
-                targetClass = "com.project.tests.OnboardingTest";
+                targetClass = "com.project.tests.stone.StoneOnboardingTest"; // UPDATED PACKAGE
                 break;
             case 2:
-                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🛑" + RESET);
+                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🚧" + RESET);
                 System.out.println("1. Ensure the app is installed and past the FTUE pages.");
                 System.out.println("2. The app MUST be resting on the 'Home' Tab.");
                 System.out.println("3. Ensure the internet is ON.");
                 waitForUser(scanner);
-                targetClass = "com.project.tests.IdentifyFeatureTest";
+                targetClass = "com.project.tests.stone.IdentifyFeatureTest";
                 break;
             case 3:
-                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🛑" + RESET);
+                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🚧" + RESET);
                 System.out.println("1. The app MUST have at least 1 stone saved in 'My Rocks'.");
                 System.out.println("2. The app MUST be resting on the 'Home' Tab.");
                 waitForUser(scanner);
-                targetClass = "com.project.tests.CollectionTest";
+                targetClass = "com.project.tests.stone.CollectionTest";
                 break;
             case 4:
-                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🛑" + RESET);
+                System.out.println(PURPLE + "\n[PRE-CONDITION REQUIRED] 🚧" + RESET);
                 System.out.println("1. The app MUST be resting on the 'Home' Tab.");
                 System.out.println("2. Ensure the internet is ON.");
                 waitForUser(scanner);
-                targetClass = "com.project.tests.NavigationTest";
+                targetClass = "com.project.tests.stone.NavigationTest";
                 break;
             default:
                 System.out.println(RED + "Invalid choice." + RESET);
                 return;
         }
 
-        // 5. Fire TestNG Dynamically
         executeTestNGClass(targetClass);
     }
 
@@ -126,7 +118,14 @@ public class MenuRunner {
     }
 
     private static void executeTestNGClass(String className) {
-        System.out.println(CYAN + "\n[SYSTEM] Initializing TestNG Engine for: " + className + RESET);
+        System.out.println(CYAN + "\n[SYSTEM] Initializing Execution Engine for: " + className + RESET);
+
+        // 🔥 THE FIX: Explicitly start the Server and the HTML Reporter BEFORE TestNG begins
+        com.project.utils.AppiumServerManager.startServer();
+        String appTarget = System.getProperty("targetApp", "Stone");
+        com.project.utils.ReportManager.setupReport(appTarget);
+
+        // Build and run the TestNG suite dynamically
         TestNG testng = new TestNG();
         XmlSuite suite = new XmlSuite();
         suite.setName("HouseOfApps_DynamicSuite");
@@ -139,5 +138,9 @@ public class MenuRunner {
         suites.add(suite);
         testng.setXmlSuites(suites);
         testng.run();
+
+        // 🔥 THE FIX: Flush the report and kill the Server AFTER TestNG finishes
+        com.project.utils.ReportManager.flushReport();
+        com.project.utils.AppiumServerManager.stopServer();
     }
 }

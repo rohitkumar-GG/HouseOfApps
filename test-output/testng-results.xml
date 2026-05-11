@@ -2,39 +2,33 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-05-06T16:40:05 IST" name="HouseOfApps_DynamicSuite" finished-at="2026-05-06T16:56:56 IST" duration-ms="1011390">
+  <suite started-at="2026-05-08T17:04:12 IST" name="HouseOfApps_DynamicSuite" finished-at="2026-05-08T17:17:54 IST" duration-ms="822597">
     <groups>
     </groups>
-    <test started-at="2026-05-06T16:40:05 IST" name="Isolated_Feature_Test" finished-at="2026-05-06T16:56:56 IST" duration-ms="1011390">
+    <test started-at="2026-05-08T17:04:12 IST" name="Isolated_Feature_Test" finished-at="2026-05-08T17:17:54 IST" duration-ms="822597">
       <class name="com.project.tests.OnboardingTest">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.project.tests.OnboardingTest@4443d071]" started-at="2026-05-06T16:40:04 IST" name="setupReport" finished-at="2026-05-06T16:40:05 IST" duration-ms="56" status="PASS">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.project.tests.OnboardingTest@2bcfb39c]" started-at="2026-05-08T17:04:12 IST" name="setupReport" finished-at="2026-05-08T17:04:12 IST" duration-ms="65" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.OnboardingTest@4443d071]" started-at="2026-05-06T16:40:05 IST" name="setupDriver" finished-at="2026-05-06T16:40:08 IST" duration-ms="3452" status="PASS">
+        <test-method is-config="true" signature="setupDriver()[pri:0, instance:com.project.tests.OnboardingTest@2bcfb39c]" started-at="2026-05-08T17:04:12 IST" name="setupDriver" finished-at="2026-05-08T17:04:15 IST" duration-ms="3645" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupDriver -->
-        <test-method signature="masterOnboardingFlowTest()[pri:0, instance:com.project.tests.OnboardingTest@4443d071]" started-at="2026-05-06T16:40:08 IST" name="masterOnboardingFlowTest" finished-at="2026-05-06T16:56:55 IST" duration-ms="1007331" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
+        <test-method signature="masterOnboardingFlowTest()[pri:0, instance:com.project.tests.OnboardingTest@2bcfb39c]" started-at="2026-05-08T17:04:15 IST" name="masterOnboardingFlowTest" finished-at="2026-05-08T17:17:54 IST" duration-ms="818358" status="FAIL">
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text='Description' or contains(@text, 'Description')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.4.1', java.version: '21.0.11'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d]]>
+              <![CDATA[Suite completed, but 12 bugs were found! Check the HTML report. expected [0] but found [12]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text='Description' or contains(@text, 'Description')] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: '4.13.0', revision: 'ba948ece5b*'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '26.4.1', java.version: '21.0.11'
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+              <![CDATA[java.lang.AssertionError: Suite completed, but 12 bugs were found! Check the HTML report. expected [0] but found [12]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1578)
+at org.testng.Assert.assertEqualsImpl(Assert.java:150)
+at org.testng.Assert.assertEquals(Assert.java:132)
+at org.testng.Assert.assertEquals(Assert.java:1419)
+at org.testng.Assert.assertEquals(Assert.java:1383)
+at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:895)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -70,15 +64,15 @@ at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJava
 at java.base/java.lang.Thread.run(Thread.java:1583)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- masterOnboardingFlowTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.OnboardingTest@4443d071]" started-at="2026-05-06T16:56:55 IST" name="tearDown" finished-at="2026-05-06T16:56:56 IST" duration-ms="599" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.project.tests.OnboardingTest@2bcfb39c]" started-at="2026-05-08T17:17:54 IST" name="tearDown" finished-at="2026-05-08T17:17:54 IST" duration-ms="585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.project.tests.OnboardingTest@4443d071]" started-at="2026-05-06T16:56:56 IST" name="flushReport" finished-at="2026-05-06T16:56:56 IST" duration-ms="87" status="PASS">
+        <test-method is-config="true" signature="flushReport()[pri:0, instance:com.project.tests.OnboardingTest@2bcfb39c]" started-at="2026-05-08T17:17:54 IST" name="flushReport" finished-at="2026-05-08T17:17:55 IST" duration-ms="107" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushReport -->

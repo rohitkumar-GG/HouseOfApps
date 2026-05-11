@@ -1,8 +1,9 @@
-package com.project.tests;
+package com.project.tests.coin;
 
 import com.project.base.BaseTest;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.By;
+import static com.project.utils.ReportManager.*;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -438,13 +439,8 @@ public class CoinMasterTest extends BaseTest {
         // FINAL DASHBOARD REPORTING
         // =========================================================
         System.out.println("\n===============================================");
-        System.out.println("📊 HOUSE OF APPS - SUITE SUMMARY");
-        System.out.println("===============================================");
-        System.out.println("Total Logical Tests : " + (passedLogicalTests + failedLogicalTests));
-        System.out.println("✅ Passes           : " + passedLogicalTests);
-        System.out.println("❌ Failures         : " + failedLogicalTests);
-        System.out.println("⚠️ Total Bugs Logged: " + totalBugCount);
-        System.out.println("📄 HTML Report      : " + System.getProperty("user.dir") + "/target/Automation_Report.html");
+        logStep("🎉 COIN MASTER SUITE COMPLETE. 🎉");
+        logStep("Total Bugs Logged: " + totalBugCount);
         System.out.println("===============================================\n");
 
         if (suiteLog != null) {
@@ -452,6 +448,6 @@ public class CoinMasterTest extends BaseTest {
         }
 
         softAssert.assertAll();
-        Assert.assertEquals(totalBugCount, 0, "Suite completed, but " + totalBugCount + " bugs were found! Check the HTML report.");
+        Assert.assertEquals(totalBugCount, 0, "Suite completed, but bugs were found! Check the HTML report.");
     }
 }

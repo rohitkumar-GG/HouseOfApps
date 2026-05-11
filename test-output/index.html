@@ -129,15 +129,8 @@
                   <a name="masterOnboardingFlowTest">
                   </a> <!-- masterOnboardingFlowTest -->
                   <span class="method-name">masterOnboardingFlowTest</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of element located by By.xpath: //*[@text=&apos;Description&apos; or contains(@text, &apos;Description&apos;)] (tried for 15 second(s) with 500 milliseconds interval)
-Build info: version: &apos;4.13.0&apos;, revision: &apos;ba948ece5b*&apos;
-System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;26.4.1&apos;, java.version: &apos;21.0.11&apos;
-Driver info: io.appium.java_client.android.AndroidDriver
-Capabilities {appium:appActivity: rock.identifier.diamond.gem..., appium:appPackage: rock.identifier.diamond.gem..., appium:autoLaunch: false, appium:automationName: UiAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: rock.identifier.diamond.gem..., appPackage: rock.identifier.diamond.gem..., autoLaunch: false, automationName: UiAutomator2, deviceName: 83fc08ef, disableWindowAnimation: true, ignoreHiddenApiPolicyError: true, ignoreUnimportantViews: true, newCommandTimeout: 3600, noReset: true, platformName: ANDROID, waitForIdleTimeout: 100}, appium:deviceApiLevel: 29, appium:deviceManufacturer: Xiaomi, appium:deviceModel: POCO F1, appium:deviceName: 83fc08ef, appium:deviceScreenDensity: 440, appium:deviceScreenSize: 1080x2246, appium:deviceUDID: 83fc08ef, appium:disableWindowAnimation: true, appium:ignoreHiddenApiPolicyError: true, appium:ignoreUnimportantViews: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 3600, appium:noReset: true, appium:pixelRatio: 2.75, appium:platformVersion: 10, appium:statBarHeight: 89, appium:takesScreenshot: true, appium:viewportRect: {height: 2157, left: 0, top: 89, width: 1080}, appium:waitForIdleTimeout: 100, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
-Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:550)
+                  <div class="stack-trace">java.lang.AssertionError: Suite completed, but 12 bugs were found! Check the HTML report. expected [0] but found [12]
+	at com.project.tests.OnboardingTest.masterOnboardingFlowTest(OnboardingTest.java:895)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 	at com.project.cli.MenuRunner.executeTestNGClass(MenuRunner.java:141)
 	at com.project.cli.MenuRunner.runStoneMenu(MenuRunner.java:119)
@@ -147,7 +140,7 @@ Session ID: 77413724-bcc1-4c4e-a0cb-e5748ff2ff7d
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.doExecClassLoader(AbstractExecJavaBase.java:377)
 	at org.codehaus.mojo.exec.AbstractExecJavaBase.lambda$execute$0(AbstractExecJavaBase.java:287)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-... Removed 24 stack frames
+... Removed 30 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -208,12 +201,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'masterOnboardingFlowTest')
 data.setCell(0, 2, 'com.project.tests.OnboardingTest')
-data.setCell(0, 3, 1007331);
+data.setCell(0, 3, 818358);
 window.suiteTableData['HouseOfApps_DynamicSuite']= { tableData: data, tableDiv: 'times-div-HouseOfApps_DynamicSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 minutes</span>
+              <span class="suite-total-time">Total running time: 13 minutes</span>
               <div id="times-div-HouseOfApps_DynamicSuite">
               </div> <!-- times-div-HouseOfApps_DynamicSuite -->
             </div> <!-- times-div -->
@@ -246,21 +239,21 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-method before">
                 <span class="method-name">setupDriver</span>
-                <span class="method-start">61 ms</span>
+                <span class="method-start">70 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">masterOnboardingFlowTest</span>
-                <span class="method-start">3513 ms</span>
+                <span class="method-start">3715 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">1010846 ms</span>
+                <span class="method-start">822076 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">flushReport</span>
-                <span class="method-start">1011474 ms</span>
+                <span class="method-start">822696 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

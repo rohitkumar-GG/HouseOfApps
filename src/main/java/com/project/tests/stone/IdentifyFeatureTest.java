@@ -1,6 +1,7 @@
-package com.project.tests;
+package com.project.tests.stone;
 
 import com.project.base.BaseTest;
+import static com.project.utils.ReportManager.*;
 import io.appium.java_client.AppiumBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
